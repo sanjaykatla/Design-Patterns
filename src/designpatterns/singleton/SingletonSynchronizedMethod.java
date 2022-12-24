@@ -1,16 +1,16 @@
 package designpatterns.singleton;
 
-public class SingletonThreadSafe {
+public class SingletonSynchronizedMethod {
 
-    private SingletonThreadSafe() {
+    private SingletonSynchronizedMethod() {
 
     }
 
-    private static SingletonThreadSafe instance = null;
+    private static SingletonSynchronizedMethod instance = null;
 
-    public static synchronized SingletonThreadSafe getInstance(){
+    public static synchronized SingletonSynchronizedMethod getInstance(){
         if(instance == null) {
-            instance = new SingletonThreadSafe();
+            instance = new SingletonSynchronizedMethod();
         }
         return instance;
     }

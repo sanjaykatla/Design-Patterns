@@ -1,16 +1,20 @@
 package designpatterns.singleton;
 
-public class SingletonSynchronizedMethod {
+public class SingletonSynchronized {
 
-    private SingletonSynchronizedMethod() {
+    private SingletonSynchronized() {
 
     }
 
-    private static SingletonSynchronizedMethod instance = null;
+    private static SingletonSynchronized instance = null;
 
-    public static synchronized SingletonSynchronizedMethod getInstance(){
-        if(instance == null) {
-            instance = new SingletonSynchronizedMethod();
+    public synchronized SingletonSynchronized getInstance() {
+        if (instance == null) {
+            synchronized (SingletonSynchronized.class) {
+                if (instance == null) {
+                    instance = new SingletonSynchronized();
+                }
+            }
         }
         return instance;
     }

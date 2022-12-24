@@ -1,2 +1,4 @@
-package designpatterns;public class FactoryDesignPattern {
+package designpatterns;
+
+public class FactoryDesignPattern {
 }
